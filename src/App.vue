@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <List msg="This is a list component"/>
+    <Add @taskList="onClickChild" />
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import List from './components/List.vue'
+import Add from './components/Add.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    List,
+    Add
+  },
+  methods : {
+    onClickChild(value) {
+      console.log(value);
+    }
   }
 }
 </script>
