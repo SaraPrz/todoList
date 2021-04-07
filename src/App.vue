@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <List msg="This is a list component"/>
-    <Add @taskList="onClickChild" />
+    <Add @setTasks="setTasks" />
+    <List :tasks="tasksList" />
 
   </div>
 </template>
@@ -17,9 +17,20 @@ export default {
     List,
     Add
   },
+  data() {
+    return {
+      tasksList : [
+      ]
+    }
+  },
   methods : {
-    onClickChild(value) {
-      console.log(value);
+    setTasks(value , id) {
+      this.tasksList.push({
+        title : value,
+        id : id,
+        status: 'incomplete',
+        completed: false
+      });
     }
   }
 }
