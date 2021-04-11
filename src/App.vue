@@ -1,19 +1,22 @@
 <template>
-  <div id="app">
+  <v-app id="app" >
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <Header />
     <Add @setTasks="setTasks" />
     <List :tasks="tasksList" />
 
-  </div>
+  </v-app>
 </template>
 
 <script>
+import Header from './components/Header.vue'
 import List from './components/List.vue'
 import Add from './components/Add.vue'
 
 export default {
   name: 'App',
   components: {
+    Header,
     List,
     Add
   },
